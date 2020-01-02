@@ -41,7 +41,8 @@ object RestConnectorUtil {
                      userCredStr: String,
                      connStr: String,
                      contentType: String,
-                     respType: String): Any = {
+                     respType: String,
+                     authToken: String): Any = {
 
 
     // print("path in callRestAPI : " + uri + " , method : " + method + ", content type : " +
@@ -51,7 +52,7 @@ object RestConnectorUtil {
 
     var httpc = (method: @switch) match {
       case "GET" => Http(addQryParmToUri(uri, data)).header("contenty-type",
-                     "application/x-www-form-urlencoded")
+                     "application/x-www-form-urlencoded").header("X-Auth-Token", authToken)
       case "PUT" => Http(uri).put(data).header("content-type", contentType)
       case "DELETE" => Http(uri).method("DELETE")
       case "POST" => Http(uri).postData(data).header("content-type", contentType)

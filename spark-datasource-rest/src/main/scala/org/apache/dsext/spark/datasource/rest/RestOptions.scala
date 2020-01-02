@@ -57,6 +57,7 @@ class RESTOptions(
 
   val url = parameters(REST_URL)
   val input = parameters(REST_INPUT)
+  val authToken = parameters(REST_AUTHTOKEN)
 
   /*
      Optional Parameters
@@ -115,4 +116,5 @@ object RESTOptions {
   val REST_OAUTH1_TOKEN_SECRET = newOption("oauthTokenSecret")
   val REST_CALL_STRICTLY_ONCE = newOption("callStrictlyOnce")
   val REST_SCHEMA_SAMPLE_PCNT = newOption("schemaSamplePcnt")
+  val REST_AUTHTOKEN = newOption("authToken")
 }
