@@ -53,6 +53,7 @@ This library supports several options for calling the target REST service:
 * `readTimeout` : In case the target API returns large volume of data which needs more read time. Default is 5000 (in ms)
 * `schemaSamplePcnt` : Percentage of records in the input table to be used to infer the schema. The default is "30" and minimum is 3. Increase this number in case you are getting an error or the schema is not propery inferred.
 * `callStrictlyOnce` : This value can be used to ensure the backend API is called only once for each set of input parameters. The default is "N", allowing the back end API to get called for multiple times - once for inferring the schema and then for other operations. If this value is set to "Y" the backend API would be called only once (during infering the schema) for all of the input parameter sets and would be cached. This option is useful when the target APIs are paid service or does not support calls per day/per hour beyond certain number. However, the results would be cached which will increase the memory usage.
+* `authToken` : Pass the authentication token. Currently used only by the GET method and reflected in the 'X-Auth-Token' key in the header.
 
 ## Typical Structure of the Dataframe returned by Rest Data Source
 
